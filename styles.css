@@ -1,0 +1,854 @@
+/* ==========================================
+   CAFÉ CASA QUINTANO
+   Hoja de estilos principal
+========================================== */
+
+/* Google Fonts
+Playfair Display
+Inter
+*/
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+
+    --verde:#556B2F;
+    --verde-claro:#6F8747;
+    --crema:#F7F3EB;
+    --blanco:#ffffff;
+    --marron:#4A3728;
+    --gris:#6d6d6d;
+    --gris-claro:#ececec;
+
+    --sombra:0 12px 35px rgba(0,0,0,.12);
+
+    --radio:14px;
+
+    --transicion:.35s ease;
+
+    --max:1280px;
+
+}
+
+/* =========================
+RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:var(--crema);
+
+color:var(--marron);
+
+line-height:1.8;
+
+overflow-x:hidden;
+
+}
+
+img{
+
+width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+.container{
+
+width:90%;
+
+max-width:var(--max);
+
+margin:auto;
+
+}
+
+/* =========================
+HEADER
+========================= */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:999;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(14px);
+
+transition:.4s;
+
+}
+
+header.scrolled{
+
+background:white;
+
+box-shadow:0 5px 25px rgba(0,0,0,.08);
+
+}
+
+header .container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:22px 0;
+
+}
+
+.logo h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:2rem;
+
+color:white;
+
+transition:.4s;
+
+}
+
+header.scrolled .logo h1{
+
+color:var(--verde);
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+}
+
+nav a{
+
+font-weight:600;
+
+color:white;
+
+position:relative;
+
+transition:.3s;
+
+}
+
+header.scrolled nav a{
+
+color:var(--marron);
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-6px;
+
+left:0;
+
+width:0;
+
+height:2px;
+
+background:var(--verde);
+
+transition:.3s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+height:100vh;
+
+background:url("../images/hero.jpg") center center/cover no-repeat;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+.overlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:10;
+
+color:white;
+
+width:90%;
+
+max-width:900px;
+
+}
+
+.hero h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:4.5rem;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:1.4rem;
+
+margin-bottom:40px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+background:var(--verde);
+
+color:white;
+
+padding:18px 45px;
+
+border-radius:50px;
+
+font-weight:bold;
+
+transition:.35s;
+
+}
+
+.btn:hover{
+
+background:var(--verde-claro);
+
+transform:translateY(-4px);
+
+}
+
+/* =========================
+SECCIONES
+========================= */
+
+section{
+
+padding:120px 0;
+
+}
+
+section h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:3rem;
+
+margin-bottom:35px;
+
+text-align:center;
+
+color:var(--verde);
+
+}
+
+section p{
+
+font-size:1.05rem;
+
+margin-bottom:20px;
+
+}
+/*====================================================
+  NUESTRA COCINA
+====================================================*/
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:16px;
+
+box-shadow:var(--sombra);
+
+transition:var(--transicion);
+
+text-align:center;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card h3{
+
+font-family:'Playfair Display',serif;
+
+color:var(--verde);
+
+margin-bottom:20px;
+
+font-size:1.6rem;
+
+}
+
+.card p{
+
+color:var(--gris);
+
+}
+
+/*====================================================
+ESPECIALIDADES
+====================================================*/
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:40px;
+
+margin-top:50px;
+
+}
+
+.plato{
+
+background:white;
+
+overflow:hidden;
+
+border-radius:16px;
+
+box-shadow:var(--sombra);
+
+transition:.35s;
+
+}
+
+.plato:hover{
+
+transform:translateY(-8px);
+
+}
+
+.plato img{
+
+height:260px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.plato:hover img{
+
+transform:scale(1.08);
+
+}
+
+.plato h3{
+
+padding:25px;
+
+text-align:center;
+
+font-family:'Playfair Display',serif;
+
+color:var(--verde);
+
+font-size:1.7rem;
+
+}
+
+/*====================================================
+CARTA
+====================================================*/
+
+.menu{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+.menu div{
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:var(--sombra);
+
+}
+
+.menu h3{
+
+font-family:'Playfair Display',serif;
+
+margin-bottom:20px;
+
+color:var(--verde);
+
+font-size:1.8rem;
+
+}
+
+.menu li{
+
+padding:10px 0;
+
+border-bottom:1px solid #ececec;
+
+}
+
+/*====================================================
+GALERÍA
+====================================================*/
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+margin-top:60px;
+
+}
+
+.gallery img{
+
+height:260px;
+
+object-fit:cover;
+
+border-radius:16px;
+
+cursor:pointer;
+
+transition:.45s;
+
+box-shadow:var(--sombra);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+/*====================================================
+OPINIONES
+====================================================*/
+
+.reviews{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+.reviews article{
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:var(--sombra);
+
+font-size:1.1rem;
+
+}
+
+.reviews article p{
+
+margin-top:15px;
+
+color:var(--gris);
+
+}
+
+/*====================================================
+RESERVAS
+====================================================*/
+
+form{
+
+max-width:800px;
+
+margin:auto;
+
+display:grid;
+
+gap:20px;
+
+}
+
+input,
+
+textarea,
+
+button{
+
+font-family:'Inter',sans-serif;
+
+font-size:1rem;
+
+padding:18px;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+outline:none;
+
+}
+
+textarea{
+
+height:170px;
+
+resize:none;
+
+}
+
+input:focus,
+
+textarea:focus{
+
+border-color:var(--verde);
+
+}
+
+button{
+
+background:var(--verde);
+
+color:white;
+
+font-weight:bold;
+
+border:none;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+button:hover{
+
+background:var(--verde-claro);
+
+}
+
+/*====================================================
+CONTACTO
+====================================================*/
+
+#contacto{
+
+background:white;
+
+}
+
+#contacto h3{
+
+margin-top:35px;
+
+margin-bottom:15px;
+
+font-family:'Playfair Display',serif;
+
+color:var(--verde);
+
+}
+
+#contacto ul{
+
+margin-top:15px;
+
+}
+
+#contacto li{
+
+padding:8px 0;
+
+}
+
+#mapa{
+
+margin-top:40px;
+
+height:450px;
+
+border-radius:16px;
+
+background:#ddd;
+
+box-shadow:var(--sombra);
+
+}
+
+/*====================================================
+FOOTER
+====================================================*/
+
+footer{
+
+background:#2e241d;
+
+color:white;
+
+text-align:center;
+
+padding:45px;
+
+}
+
+/*====================================================
+ANIMACIONES
+====================================================*/
+
+.card,
+
+.plato,
+
+.menu div,
+
+.gallery img,
+
+.reviews article{
+
+animation:fadeUp .8s ease both;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*====================================================
+RESPONSIVE
+====================================================*/
+
+@media(max-width:992px){
+
+.hero h2{
+
+font-size:3rem;
+
+}
+
+.hero p{
+
+font-size:1.2rem;
+
+}
+
+nav ul{
+
+gap:18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+header .container{
+
+flex-direction:column;
+
+}
+
+nav{
+
+margin-top:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+padding:0 20px;
+
+}
+
+.hero h2{
+
+font-size:2.4rem;
+
+}
+
+section{
+
+padding:90px 0;
+
+}
+
+section h2{
+
+font-size:2.2rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.logo h1{
+
+font-size:1.6rem;
+
+}
+
+.hero h2{
+
+font-size:2rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+.btn{
+
+padding:15px 30px;
+
+}
+
+}
